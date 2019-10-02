@@ -1,0 +1,74 @@
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe.config
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.pdb
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.dll
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.pdb
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csprojAssemblyReference.cache
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.g.cs
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\App.g.cs
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.cache
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.lref
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.baml
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.g.resources
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel_Experts_Services_WPF.Properties.Resources.resources
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.GenerateResource.cache
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CoreCompileInputs.cache
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CopyComplete
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.exe
+C:\xampp1\htdocs\test\mmm\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.pdb
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe.config
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.pdb
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.dll
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.pdb
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csprojAssemblyReference.cache
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Login.g.cs
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.g.cs
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\App.g.cs
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.cache
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.lref
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Login.baml
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.baml
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.g.resources
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel_Experts_Services_WPF.Properties.Resources.resources
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.GenerateResource.cache
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CoreCompileInputs.cache
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CopyComplete
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.exe
+C:\Users\760980\Downloads\Project_Strike-loginbind\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.pdb
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe.config
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.pdb
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.dll
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.pdb
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csprojAssemblyReference.cache
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.g.cs
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\App.g.cs
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.cache
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.lref
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.baml
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.g.resources
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel_Experts_Services_WPF.Properties.Resources.resources
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.GenerateResource.cache
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CoreCompileInputs.cache
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CopyComplete
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.exe
+C:\Users\538003\Documents\GitHub\Project_Strike\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.pdb
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe.config
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.exe
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\Travel Experts Services WPF.pdb
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.dll
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\bin\Debug\TravelExpertsDB.pdb
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csprojAssemblyReference.cache
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\App.g.cs
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.cache
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF_MarkupCompile.lref
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\MainWindow.baml
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.g.resources
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel_Experts_Services_WPF.Properties.Resources.resources
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.GenerateResource.cache
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CoreCompileInputs.cache
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.csproj.CopyComplete
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.exe
+C:\Users\Sijia\Desktop\Project_Strike-master\Project_Strike-master\Travel Experts Services WPF\Travel Experts Services WPF\obj\Debug\Travel Experts Services WPF.pdb

@@ -1,0 +1,438 @@
+﻿<Window x:Name="Travel_Experts" x:Class="Travel_Experts_Services_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Travel_Experts_Services_WPF"
+        mc:Ignorable="d"
+        Title="Travel Experts" Height="537.369" Width="1050"  Loaded="Window_Loaded" Background="#FF2F4858" Visibility="Visible" WindowStyle="None" FontSize="16" AllowsTransparency="True">
+    <Window.Resources>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="Background" Value="#2f4858"/>
+        </Style>
+        <Style TargetType="Page">
+            <Setter Property="Background" Value="#2f4858"/>
+        </Style>
+
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="CanContentScroll" Value="True"></Setter>
+            <Style.Resources>
+                <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#D6D4D4" />
+                <SolidColorBrush x:Key="NormalBrush" Color="Transparent" />
+                <SolidColorBrush x:Key="NormalBorderBrush" Color="#D6D4D4" />
+                <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#D6D4D4" />
+                <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#D6D4D4" />
+
+                <SolidColorBrush x:Key="GlyphBrush" Color="Black" />
+                <LinearGradientBrush x:Key="PressedBrush"
+            StartPoint="0,0" EndPoint="0,1">
+                    <GradientBrush.GradientStops>
+                        <GradientStopCollection>
+                            <GradientStop Color="#BBB" Offset="0.0"/>
+                            <GradientStop Color="#EEE" Offset="0.1"/>
+                            <GradientStop Color="#EEE" Offset="0.9"/>
+                            <GradientStop Color="#FFF" Offset="1.0"/>
+                        </GradientStopCollection>
+                    </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+
+                <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Setter Property="Focusable" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                <Border Name="Border" Margin="1" Background="{StaticResource NormalBrush}">
+                                    <Path HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Path=Content,
+                RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background"
+                                Value="#6A6A6A" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" TargetName="Border" Value="0.8"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Foreground"
+                                Value="{StaticResource DisabledForegroundBrush}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Focusable" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                <Border Background="Transparent" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Width" Value="8"/>
+                    <Setter Property="Focusable" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                <Border x:Name="border"  Background="#D6D4D4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" />
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="border" Value="#6A6A6A"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+                <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition MaxHeight="18"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition MaxHeight="18"/>
+                        </Grid.RowDefinitions>
+                        <Border  Grid.RowSpan="3" CornerRadius="2"  Background="Transparent"  BorderThickness="0" BorderBrush="#FF2F89FC" />
+                        <RepeatButton  Grid.Row="0" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.LineUpCommand" Content="M 0 4 L 8 4 L 4 0 Z" />
+                        <Track Name="PART_Track" Grid.Row="1" IsDirectionReversed="true">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Style="{StaticResource ScrollBarPageButton}"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ScrollBarThumb}" Margin="1,0,1,0" Background="{StaticResource HorizontalNormalBrush}"
+          BorderBrush="{StaticResource HorizontalNormalBorderBrush}" />
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageDownCommand" />
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                        <RepeatButton Grid.Row="3" Style="{StaticResource ScrollBarLineButton}" Height="18" Command="ScrollBar.PageDownCommand"  Content="M 0 0 L 4 4 L 8 0 Z"/>
+                    </Grid>
+                </ControlTemplate>
+
+                <Style x:Key="HScrollBarThumb" TargetType="{x:Type Thumb}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Height" Value="9"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Focusable" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                <Border  x:Name="border" CornerRadius="0" Background="#FF2F89FC" 
+                             BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" />
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="border" Value="#6A6A6A"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Style.Triggers>
+
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="Width" Value="10"/>
+                            <Setter Property="Height" Value="Auto" />
+                            <Setter Property="Template"
+                        Value="{StaticResource VerticalScrollBar}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="DatePicker">
+            <Setter Property="BorderBrush" Value="#FF40514E"/>
+        </Style>
+        <!--<Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="#FF40514E"/>
+            <Setter Property="BorderBrush" Value="#FF2F89FC"/>
+        </Style>-->
+        <!--<Style TargetType="{x:Type RepeatButton}">
+            <Setter Property="Background" Value="#FF2F89FC"/>
+        </Style>-->
+        <Style TargetType="{x:Type TabControl}">
+            <Setter Property="Background" Value="#FF2F4858"/>
+            <Setter Property="BorderBrush" Value="#FF2F4858"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+        </Style>
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="Text" Value="" />
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="#40514E" />
+            <Setter Property="BorderBrush" Value="#40514E" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="188" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#40514e"/>
+            <Setter Property="BorderBrush" Value="#30e3ca"/>
+            <Setter Property="Foreground" Value="#30e3ca"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#40514e"/>
+            <Setter Property="Foreground" Value="#FF2F89FC"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+        </Style>
+        <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer"/>
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="#FF40514E"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserSortColumns" Value="False"/>
+            <Setter Property="AutoGenerateColumns" Value="True"/>
+            <Setter Property="ColumnWidth" Value="*"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="Background" Value="#FF40514E"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#FF2F89FC"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#FF2F89FC"/>
+            <Setter Property="BorderBrush" Value="#FF2F89FC"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+        <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+            <Setter Property="Background" Value="#FF40514E"/>
+            <Setter Property="Foreground" Value="#30e3ca"/>
+            <Setter Property="BorderBrush" Value="#FF2F89FC"/>
+            <Setter Property="BorderThickness" Value="0,0,0,0"/>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Background" Value="#FF40514E"/>
+            <Setter Property="Foreground" Value="#30e3ca"/>
+            <Setter Property="BorderBrush" Value="#FF2F89FC"/>
+            <Setter Property="BorderThickness" Value="1,1,2,2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type TabPanel}">
+            <Setter Property="Background" Value="Black"/>
+        </Style>
+    </Window.Resources>
+    <Window.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF00FF0C"/>
+            <GradientStop Color="Red" Offset="1"/>
+            <GradientStop Color="#FF81E2FF" Offset="0.491"/>
+        </LinearGradientBrush>
+    </Window.BorderBrush>
+    <Grid Margin="0,0,46,2">
+        <Grid Grid.Row=" 0" x:Name="TitleBar" Margin="0,0,-46,495" MouseMove="TitleBar_MouseMove">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF40514E" Offset="0"/>
+                    <GradientStop Color="#FF2F4858" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Button x:Name="btnExit" Content="X" HorizontalAlignment="Left" Margin="1015,5,0,0" VerticalAlignment="Top" Width="30" Height="30" FontSize="20" Click="btnExit_Click" IsCancel="True" RenderTransformOrigin="-0.381,0.314"/>
+            <Button x:Name="btnMin" Content="________" HorizontalAlignment="Left" Margin="980,5,0,0" VerticalAlignment="Top" Width="30" Height="30" FontSize="11" Click="btnMin_Click" IsCancel="True" RenderTransformOrigin="-0.381,0.314" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="40,10,0,0" TextWrapping="Wrap" Text="Travel Experts" VerticalAlignment="Top" Width="255" Foreground="#FF30E3CA"/>
+            <Image HorizontalAlignment="Left" Height="30" Margin="5,10,0,0" VerticalAlignment="Top" Width="30" Source="images/png.png"/>
+        </Grid>
+        <TabControl x:Name="tabControl1" Margin="0,40,-46,-2" Height="497" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1050">
+            <TabItem x:Name="tbiMainPage" Header="Login" TabIndex="7" Foreground="#30e3ca" Background="#40514e" BorderBrush="#30e3ca" BorderThickness="1,1,1,1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid Background="#FF2F4858">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="lblMain" Height="105" Margin="149,1,147,358" TextWrapping="Wrap" Text="Travel Experts Login" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center" Width="748" TextAlignment="Center" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Stretch" Height="45" Margin="357,355,40,0" VerticalAlignment="Top" Click="BtnLogin_Click"/>
+                    <Button x:Name="btnReset" Content="Clear" HorizontalAlignment="Stretch" Height="45" Margin="40,355,357,0" VerticalAlignment="Top" Grid.Column="1" Click="BtnReset_Click"/>
+                    <TextBlock x:Name="lblUserName" Height="25" Margin="392,195,40,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="lblPassword" Height="25" Margin="392,235,40,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="25" Margin="40,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Grid.Column="1"/>
+                    <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="25" Margin="40,235,0,0" VerticalAlignment="Top" Width="125" Grid.Column="1" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}"/>
+                    <CheckBox x:Name="ckbRemember" Content="Remember Me" Background="#FF40514E" Margin="460,280,458,0" VerticalAlignment="Top" Foreground="#30e3ca" Checked="CkbRemember_Checked" Grid.ColumnSpan="2" BorderBrush="#FF30E3CA" Unchecked="CkbRemember_Unchecked"/>
+                    <Image x:Name="HomeImage" HorizontalAlignment="Left" Visibility="Hidden" Height="345" Margin="252,100,0,0" VerticalAlignment="Top" Width="540" Source="images/pexels-photo-858115.png" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiPkgOverview" Header="Packages Overview" TabIndex="2" Foreground="#30e3ca" Background="#40514e" BorderBrush="#30e3ca" BorderThickness="1,1,1,1" Visibility="Hidden">
+                <Grid Background="#FF2F4858">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="gvPackages" ColumnWidth="*" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="1024" TabIndex="0" SelectionChanged="GvPackages_SelectionChanged" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Package ID" Binding="{Binding PackageID}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Package Name" Binding="{Binding PkgName}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Package Start Date" Binding="{Binding PkgStartDate, StringFormat=\{0:dd/MM/yy\}}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Package End Date" Binding="{Binding PkgEndDate, StringFormat=\{0:dd/MM/yy\}}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Package Desc" Binding="{Binding PkgDesc}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Base Price" Binding="{Binding PkgBasePrice, StringFormat=C}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Agency Commission" Binding="{Binding PkgAgencyCommission, StringFormat=C}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="gvProducts" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="135" Margin="10,223,0,0" VerticalAlignment="Top" Width="327" Background="#FF40514E">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProdName}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Product Supplier Id" Binding="{Binding ProductSupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Package ID" Binding="{Binding PackageID}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Package Name" Binding="{Binding PkgName}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier ID" Binding="{Binding SupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier Name" Binding="{Binding SupName}" Visibility="Hidden"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="gvSuppliers" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="135" Margin="185,223,0,0" VerticalAlignment="Top" Width="327" Background="#FF40514E" Grid.Column="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProdName}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Supplier Id" Binding="{Binding ProductSupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Package ID" Binding="{Binding PackageID}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Package Name" Binding="{Binding PkgName}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier ID" Binding="{Binding SupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier Name" Binding="{Binding SupName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnAddPkg" Content="Add Package" HorizontalAlignment="Left"  Margin="10,179,0,0" VerticalAlignment="Top" Width="110" Click="BtnAddPkg_Click"/>
+                    <Button x:Name="btnEditPkg" Content="Edit Package" HorizontalAlignment="Left"  Margin="402,179,0,0" VerticalAlignment="Top" Width="110" Click="BtnEditPkg_Click" Grid.Column="1"/>
+                    <Button x:Name="btnDeletepkg" Content="Delete" HorizontalAlignment="Left" Height="25" Margin="467,179,0,0" VerticalAlignment="Top" Width="110" Click="BtnDeletepkg_Click" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiPackages" Header="Packages" TabIndex="3" Foreground="#30e3ca" Background="#40514e" BorderBrush="#30e3ca" BorderThickness="1,1,1,1" Visibility="Hidden">
+                <Grid Background="#FF2F4858">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="lblPkgName" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" TextWrapping="Wrap" Text="Package Name:" VerticalAlignment="Top" Width="87" Foreground="#FF30E3CA"/>
+                    <TextBox x:Name="txtPackageName" MaxLength="50" HorizontalAlignment="Left" Height="24" Margin="181,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}" TextChanged="TxtPackageName_TextChanged"/>
+                    <TextBlock x:Name="lblPkgStartDate" HorizontalAlignment="Left" Height="25" Margin="10,59,0,0" TextWrapping="Wrap" Text="Package Start Date:" VerticalAlignment="Top" Width="107" Foreground="#FF30E3CA"/>
+                    <DatePicker x:Name="dtpPkgStartDate" SelectedDateFormat="Short" HorizontalAlignment="Left" Height="50" Margin="174,55,0,0" VerticalAlignment="Top" Width="226" Background="{x:Null}" Foreground="#FF2F89FC" BorderBrush="{x:Null}"/>
+                    <TextBlock x:Name="lblPkgEndDate" HorizontalAlignment="Left" Height="25" Margin="10,114,0,0" TextWrapping="Wrap" Text="Package End Date:" VerticalAlignment="Top" Width="107" Foreground="#FF30E3CA"/>
+                    <DatePicker x:Name="dtpPkgEndDate" SelectedDateFormat="Short" HorizontalAlignment="Left" Height="50" Margin="174,110,0,0" VerticalAlignment="Top" Width="226" Background="{x:Null}" Foreground="#FF2F89FC" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="txtPkgDesc" MaxLength="50" HorizontalAlignment="Left" Height="72" Margin="181,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}" TextChanged="TxtPkgDesc_TextChanged"/>
+                    <TextBlock x:Name="lblPkgName_Copy1" HorizontalAlignment="Left" Height="25" Margin="10,164,0,0" TextWrapping="Wrap" Text="Package Description:" VerticalAlignment="Top" Width="117" Foreground="#FF30E3CA"/>
+                    <TextBlock x:Name="lblPkgBasePrice" HorizontalAlignment="Left"  Margin="10,259,0,0" TextWrapping="Wrap" Text="Package Base Price:" VerticalAlignment="Top" Width="117" Foreground="#FF30E3CA"/>
+                    <TextBox x:Name="txtPkgBasePrice" HorizontalAlignment="Left" Height="24" Margin="181,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}"/>
+                    <TextBlock x:Name="lblPkgAgencyCommission" HorizontalAlignment="Left" Height="25" Margin="10,305,0,0" TextWrapping="Wrap" Text="Package Agency Commision:" VerticalAlignment="Top" Width="177" Foreground="#FF30E3CA"/>
+                    <TextBox x:Name="txtPkgAgencyCommission" HorizontalAlignment="Left" Height="24" Margin="181,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}"/>
+                    <Button x:Name="btnAddEditPkg" Content="Save New Package" Margin="10,355,894,0" VerticalAlignment="Top" Click="BtnAddEditPkg_Click" Width="140"/>
+
+
+                    <DataGrid x:Name="gvProdSup_pkg" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="150" Margin="584,10,0,0" VerticalAlignment="Top" Width="450" Background="#FF40514E" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="PackageID" Binding="{Binding PackageID}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Pkg Name" Binding="{Binding ProductSupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Pkg Start Date" Binding="{Binding ProdcustId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Pkg End Date" Binding="{Binding SupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Pkg Desc" Binding="{Binding PkgName}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProdName}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Supplier Name" Binding="{Binding SupName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                    <DataGrid x:Name="gvProdSup_all_pkgs" Visibility="Hidden" HorizontalAlignment="Left" Height="150" Margin="584,225,0,0" VerticalAlignment="Top" Width="450"/>
+                    <Button x:Name="btnNewPkgProdSup" Content="New Product" HorizontalAlignment="Left" Margin="584,180,0,0" VerticalAlignment="Top" Width="110" Click="BtnNewPkgProdSup_Click" RenderTransformOrigin="0.5,0.5"/>
+                    <Button x:Name="btnDeletePkgProdSup_Click" Content="Delete Product" HorizontalAlignment="Left" Margin="924,180,0,0" VerticalAlignment="Top" Width="110
+                        " Click="BtnDeletePkgProdSup_Click"/>
+                    <Button x:Name="btnAddPkgProdSup" Visibility="Hidden" Content="Add New" HorizontalAlignment="Left" Margin="584,390,0,0" VerticalAlignment="Top" Width="110" Click="BtnAddPkgProdSup_Click"/>
+                    <Button x:Name="btnClearPkg" Content="Clear" HorizontalAlignment="Left" Margin="299,355,0,0" VerticalAlignment="Top" Width="70" Click="BtnClearPkg_Click"/>
+                    <TextBlock x:Name="lblPkgNameLength" HorizontalAlignment="Left" Height="25" Margin="382,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                    <TextBlock x:Name="lblPkgDescLength" HorizontalAlignment="Left" Height="25" Margin="382,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="190"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiProducts" Header="Products" TabIndex="4" Foreground="#30e3ca" Background="#40514e" BorderBrush="#30e3ca" BorderThickness="1,1,1,1" Visibility="Hidden">
+                <Grid Background="#FF2F4858" Margin="0,0,0,-1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="lblProdName2" HorizontalAlignment="Left" Margin="34,20,0,0" TextWrapping="Wrap" Text="Product:" VerticalAlignment="Top" Width="87" Foreground="#FF30E3CA"/>
+                    <TextBox x:Name="txtProdName" MaxLength="50" HorizontalAlignment="Left" Height="24" Margin="125,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}"/>
+                    <Button x:Name="btnClearP" Content="Clear" HorizontalAlignment="Left" Margin="254,16,0,0" VerticalAlignment="Top" Width="80" Click="BtnClearP_Click"/>
+                    <DataGrid x:Name="gvProducts1" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" Margin="34,51,0,0" VerticalAlignment="Top" Width="300" SelectionChanged="GvProducts1_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProdName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="gvSuppliers1" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" Margin="372,51,0,0" VerticalAlignment="Top" Width="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Supplier ID" Binding="{Binding SupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier Name" Binding="{Binding SupName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="gvSupByProd" Visibility="Hidden" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" Margin="726,51,0,0" VerticalAlignment="Top" Width="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Supplier ID" Binding="{Binding SupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier Name" Binding="{Binding SupName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnDelPS" Visibility="Hidden" Content="&gt;&gt;" HorizontalAlignment="Stretch" Margin="683,110,327,0" VerticalAlignment="Top" Click="BtnDelPS_Click"/>
+                    <Button x:Name="btnAddPS" Visibility="Hidden" Content="&lt;&lt;" HorizontalAlignment="Stretch" Margin="683,175,327,0" VerticalAlignment="Top" Click="BtnAddPS_Click"/>
+                    <Button x:Name="btnAddNewProd" Content="Add New Product" HorizontalAlignment="Left" Margin="34,256,0,0" VerticalAlignment="Top" Width="140" Click="BtnAddNewProd_Click" />
+                    <Button x:Name="btnEditP" Content="Edit Product" HorizontalAlignment="Left" Margin="34,296,0,0" VerticalAlignment="Top" Width="140" Click="BtnEditP_Click"/>
+                    <Button x:Name="btnDelProd" Content="Delete Product" HorizontalAlignment="Left" Margin="194,256,0,0" VerticalAlignment="Top" Width="140" Click="BtnDelProd_Click"/>
+                    <Button x:Name="btnSaveP" Visibility="Hidden" Content="Save" HorizontalAlignment="Left" Margin="194,296,0,0" VerticalAlignment="Top" Width="140" Click="BtnSaveP_Click"/>
+                    <Button x:Name="btnShowPS" Content="Show" HorizontalAlignment="Left" Margin="493,275,0,0" VerticalAlignment="Top" Width="70" Click="BtnShowPS_Click"/>
+                    <TextBlock x:Name="lblSL" HorizontalAlignment="Left" Margin="372,20,0,0" TextWrapping="Wrap" Text="Suppliers On List:" VerticalAlignment="Top" Width="145" Foreground="#FF30E3CA"/>
+                    <TextBlock x:Name="lblSNL" Visibility="Hidden" HorizontalAlignment="Left" Margin="726,20,0,0" TextWrapping="Wrap" Text="Suppliers Not On List:" VerticalAlignment="Top" Width="200" Foreground="#FF30E3CA"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiSuppliers" Header="Suppliers" TabIndex="5" Foreground="#30e3ca" Background="#40514e" BorderBrush="#30e3ca" BorderThickness="1,1,1,1" Visibility="Hidden">
+                <Grid Background="#FF2F4858" Margin="0,0,0,-3">
+                    <TextBlock x:Name="lblSupName2" HorizontalAlignment="Left" Height="25" Margin="34,20,0,0" TextWrapping="Wrap" Text="Supplier:" VerticalAlignment="Top" Width="123" Foreground="#FF30E3CA"/>
+                    <TextBox x:Name="txtSupName" MaxLength="50" HorizontalAlignment="Left" Height="24" Margin="125,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Foreground="#FF2F89FC" Background="#FF40514E" BorderBrush="{x:Null}"/>
+                    <Button x:Name="btnClearS" Content="Clear" HorizontalAlignment="Left" Margin="254,16,0,0" VerticalAlignment="Top" Width="80" Click="BtnClearS_Click"/>
+                    <DataGrid x:Name="gvSuppliers2" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" Margin="34,51,0,0" VerticalAlignment="Top" Width="300" SelectedCellsChanged="GvSuppliers2_SelectedCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Supplier ID" Binding="{Binding SupplierId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Supplier Name" Binding="{Binding SupName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="gvProducts2" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" Margin="372,51,0,0" VerticalAlignment="Top" Width="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProdName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid x:Name="gvProdBySup" Visibility="Hidden" VerticalGridLinesBrush="#FF40514E" ColumnWidth="*" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" Margin="726,51,0,0
+                          " VerticalAlignment="Top" Width="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Product Name" Binding="{Binding ProdName}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnDelSP" Visibility="Hidden" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="683,110,327,0" VerticalAlignment="Top" Width="34" Click="BtnDelSP_Click"/>
+                    <Button x:Name="btnAddSP" Visibility="Hidden" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="683,175,327,0" VerticalAlignment="Top" Width="34" Click="BtnAddSP_Click"/>
+                    <Button x:Name="btnNewS" Content="Add New Supplier" HorizontalAlignment="Left" Margin="34,256,0,0" VerticalAlignment="Top" Width="140" Click="BtnNewS_Click"/>
+                    <Button x:Name="btnEditS" Content="Edit Supplier" HorizontalAlignment="Left" Margin="34,296,0,0" VerticalAlignment="Top" Width="140" Click="BtnEditS_Click"/>
+                    <Button x:Name="btnDelSup" Content="Delete Supplier" HorizontalAlignment="Left" Margin="194,256,0,0" VerticalAlignment="Top" Width="140" Click="BtnDelSup_Click"/>
+                    <Button x:Name="btnSaveS" Visibility="Hidden" Content="Save" HorizontalAlignment="Left" Margin="194,296,0,0" VerticalAlignment="Top" Width="140" Click="BtnSaveS_Click"/>
+                    <Button x:Name="btnShowSP" Content="Show" HorizontalAlignment="Left" Margin="493,275,0,0" VerticalAlignment="Top" Width="70" Click="BtnShowSP_Click"/>
+                    <TextBlock x:Name="lblPNL" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,20,0,0" TextWrapping="Wrap" Text="Products Not On List:" VerticalAlignment="Top" Width="200" Foreground="#FF30E3CA"/>
+                    <TextBlock x:Name="lblSL_Copy" HorizontalAlignment="Left" Margin="372,20,0,0" TextWrapping="Wrap" Text="Products On List:" VerticalAlignment="Top" Width="145" Foreground="#FF30E3CA"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
